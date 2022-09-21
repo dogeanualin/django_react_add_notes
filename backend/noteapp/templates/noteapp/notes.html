@@ -1,0 +1,23 @@
+{% extends "noteapp/base.html" %}
+
+{% block header %}
+<div class="notes-header">
+    <h2 class="notes-title">☶ Notes</h2>
+    <p class="notes-count"> 2</p>
+</div>
+{% endblock header %}
+
+{% block content %}
+    <div class="notes-list">
+
+        {% for note in notes %}
+        <a href="{% url 'note' note.id %}">
+            <div class="notes-list-item">
+                <h3>{{note.body}}</h3>
+            </div>
+        </a>
+        {% endfor %}
+       
+      
+    </div>
+{% endblock content %}
